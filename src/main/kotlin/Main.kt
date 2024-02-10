@@ -1,5 +1,5 @@
 package org.example
 
 fun main() {
-    println(first("src/main/resources/input.txt"))
+    println(second("src/main/resources/input.txt"))
 }
