@@ -45,20 +45,20 @@ object CubeConundrum {
 
     private fun game(line: String): Game {
         return line.split(':').run {
-            Game(extractDigits(this[0]), this[1].split(';', ',').let { cubes ->
+            Game(extractDigits(this[0])!!, this[1].split(';', ',').let { cubes ->
                 buildSet {
                     for (cube in cubes) add(
                         Color.entries.first { cube.contains(it.name, true) }
-                                to extractDigits(cube)
+                                to extractDigits(cube)!!
                     )
                 }
             })
         }
     }
+}
 
-    private fun extractDigits(string: String): Int {
-        return StringBuilder().apply {
-            for (char in string) if (char.isDigit()) append(char)
-        }.toString().toInt()
-    }
+fun extractDigits(string: String): Int? {
+    return StringBuilder().apply {
+        for (char in string) if (char.isDigit()) append(char)
+    }.let { if (it.isEmpty()) null else it.toString() }?.toInt()
 }
