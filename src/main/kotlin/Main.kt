@@ -1,5 +1,5 @@
 package org.aoc
 
 fun main() {
-    println(GearRatios.second("src/main/resources/3.txt"))
+    println(Scratchcards.first("src/main/resources/4.txt"))
 }
