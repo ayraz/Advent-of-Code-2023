@@ -1,5 +1,10 @@
 package org.aoc
 
+import kotlin.time.DurationUnit
+import kotlin.time.measureTime
+
 fun main() {
-    println(Scratchcards.first("src/main/resources/4.txt"))
+    measureTime {
+        println(Scratchcards.second("src/main/resources/4.txt"))
+    }.also { println("Running time: ${it.toString(DurationUnit.SECONDS, 2)}") }
 }
