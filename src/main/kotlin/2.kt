@@ -57,8 +57,14 @@ object CubeConundrum {
     }
 }
 
-fun extractDigits(string: String): Int? {
+inline fun <reified T> extractDigits(string: String): T? {
     return StringBuilder().apply {
         for (char in string) if (char.isDigit()) append(char)
-    }.let { if (it.isEmpty()) null else it.toString() }?.toInt()
+    }.let { if (it.isEmpty()) null else it.toString() }?.run {
+        when (T::class) {
+            Int::class -> toInt()
+            Long::class -> toLong()
+            else -> null
+        } as T?
+    }
 }

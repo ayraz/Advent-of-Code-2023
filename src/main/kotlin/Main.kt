@@ -5,6 +5,6 @@ import kotlin.time.measureTime
 
 fun main() {
     measureTime {
-        println(Scratchcards.second("src/main/resources/4.txt"))
+        println(IfYouGiveASeedAFertilizer.first("src/main/resources/5.txt"))
     }.also { println("Running time: ${it.toString(DurationUnit.SECONDS, 2)}") }
 }

@@ -115,7 +115,7 @@ object GearRatios {
         }
         return line.substring(l + 1, r)
             .split('.')
-            .mapNotNull { extractDigits(it) }
+            .mapNotNull { extractDigits<Int>(it) }
             .also { if (it.isNotEmpty()) println("Found gears: $it") }
     }
 }
