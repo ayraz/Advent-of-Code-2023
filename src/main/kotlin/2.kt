@@ -64,6 +64,7 @@ inline fun <reified T> extractDigits(string: String): T? {
         when (T::class) {
             Int::class -> toInt()
             Long::class -> toLong()
+            String::class -> this
             else -> null
         } as T?
     }
