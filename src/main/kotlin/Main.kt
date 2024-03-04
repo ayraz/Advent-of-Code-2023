@@ -5,6 +5,6 @@ import kotlin.time.measureTime
 
 fun main() {
     measureTime {
-        println("\nResult: ${CamelCards.first("src/main/resources/7.txt")}")
+        println("\nResult: ${CamelCards.second("src/main/resources/7.txt")}")
     }.also { println("Running time: ${it.toString(DurationUnit.SECONDS, 2)}") }
 }
